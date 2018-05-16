@@ -18,15 +18,29 @@ var x = new Vue({
     el: '#search',
     data: {
         keyword: '',
-        results: [],
-
-    },
-    methods:{
+        results: {},
 
     },
     watch:{
+        keyword: function(val){
+            this.search(val);
+            
+        }
+    },
+    methods:{
+        search: function(val){
+            axios.get('http://127.0.0.1:8000/api/search?q='+this.keyword)
+        .then(function (response) {
+            console.log(response);
+          x.results = response.data;
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+        }
+    },
+    
 
-    }
 })
 </script>
 @endsection
