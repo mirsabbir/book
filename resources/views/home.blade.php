@@ -18,11 +18,11 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                 <label for="inputEmail4">Book name</label>
-                                <input type="email" name="name" class="form-control" id="inputEmail4" placeholder="Book name">
+                                <input type="text" name="name" class="form-control" placeholder="Book name">
                                 </div>
                                 <div class="form-group col-md-6">
                                 <label for="inputPassword4">Publisher</label>
-                                <input type="password" name="publisher" class="form-control" id="inputPassword4" placeholder="Publisher">
+                                <input type="text" name="publisher" class="form-control"  placeholder="Publisher">
                                 </div>
                             </div>
                             <div class="form-group">

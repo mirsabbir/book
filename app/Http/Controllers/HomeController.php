@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         $image = $request->file('cover');
         $name = time() . '.' . $image->getClientOriginalExtension();
-        $image->storeAs('uploads',$name);
+        $path = $image->storeAs('images/uploads',$name);
         $book = Book::create([
             'name'=>$request->name,
             'publisher'=>$request->publisher,
@@ -41,7 +41,7 @@ class HomeController extends Controller
             'tag3'=>$request->tag3,
             'tag4'=>$request->tag4,
             'tag5'=>$request->tag5,
-            'cover' => $name,
+            'cover' => $path,
         ]);
         
         $book->save();
